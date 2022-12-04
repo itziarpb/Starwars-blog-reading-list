@@ -8,8 +8,8 @@ import "../../styles/home.css";
 
 export const Home = () => (
 	
-	<div className=" text-center mt-5">
-		
+	<div className="container mt-5">
+		<h1>Characters</h1>
 		<Cards />
 
 	

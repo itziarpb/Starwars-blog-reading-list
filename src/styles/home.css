@@ -1,8 +1,8 @@
 .scroll {
-    overflow-x:auto;
-    border:1px solid #aaa;
-    height: 60px;
-    padding: 5px;
-    margin-top:10px;
-
+  overflow-x: auto;
+  display: flex;
+  height: 330px;
+  width: 100%;
+  padding: 5px;
+  margin-top: 10px;
 }
