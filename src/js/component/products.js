@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useState, useContext } from "react";
 import img400x200 from "../../img/400x200.png";
+import { Context } from "../store/appContext";
 
 
 const Products = (props) => {
+  const {store, actions} = useContext(Context);
+
+  const handleClick = ()=>{
+    actions.addFavorite();
+    console.log(likes)
+  }
+
   return (
     <div className="col-12 col-md-4">
       <div className="card">
@@ -15,7 +23,7 @@ const Products = (props) => {
           <a href="#" className="btn btn-primary">
             Learn More
           </a>
-          <a href="#" className="btn btn-primary ms-1">
+          <a href="#" onClick={handleClick} className="btn btn-primary ms-1">
             like
           </a>
         </div>
