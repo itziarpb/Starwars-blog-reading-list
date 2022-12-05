@@ -11,7 +11,7 @@ export const Home = () => (
 	<div className="container mt-5">
 		<h1>Characters</h1>
 		<Cards />
-
+		<h1>Planets</h1>
 	
 	</div>
 	

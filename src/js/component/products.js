@@ -1,8 +1,14 @@
-import React from "react";
+import React, {useContext}from "react";
+import { Context } from "../store/appContext";
 import img400x200 from "../../img/400x200.png";
 
 
 const Products = (props) => {
+  const {store, actions}= useContext(Context)
+
+  const click =(e)=>{
+      actions.addLikes({name: props.name})
+  }
   return (
     <div className="col-12 col-md-4">
       <div className="card">
@@ -15,8 +21,8 @@ const Products = (props) => {
           <a href="#" className="btn btn-primary">
             Learn More
           </a>
-          <a href="#" className="btn btn-primary ms-1">
-            like
+          <a href="#" onClick={click} className="btn btn-outline-warning  justify-content-md-end">
+          <i class="far fa-heart"></i>
           </a>
         </div>
       </div>

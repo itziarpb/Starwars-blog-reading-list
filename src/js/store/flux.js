@@ -12,9 +12,14 @@ const getState = ({ getStore, getActions, setStore }) => {
 					background: "white",
 					initial: "white"
 				}
-			]
+			], 
+			 likes:[]
 		},
 		actions: {
+			addLikes:(characters)=>{
+				const store = getStore()
+				setStore({likes: [...store.likes, characters]})
+			}, 
 			// Use getActions to call a function within a fuction
 			exampleFunction: () => {
 				getActions().changeColor(0, "green");
