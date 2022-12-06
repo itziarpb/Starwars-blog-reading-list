@@ -1,14 +1,13 @@
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
-			favorites: [],
-			likes:0
+			favorites: []
 		},
 		actions: {
 			// Use getActions to call a function within a fuction
-			addFavorite: () => {
+			addFavorite: (character) => {
 				const store = getStore();
-				setStore({likes: store.likes+1})
+				setStore({favorites: [...store.favorites, character]})
 				
 			},
 		

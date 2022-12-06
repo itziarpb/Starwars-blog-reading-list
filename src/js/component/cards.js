@@ -20,7 +20,7 @@ const Cards = () => {
     <div className="d-flex">
       {characters.map((character, index) => (
         <Products 
-          name={character.name} key={character.uid} />
+          name={character.name} id={character.uid} key={character.uid} />
       ))}
     </div>
     </div>
