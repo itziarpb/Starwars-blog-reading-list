@@ -5,8 +5,10 @@ import { Context } from "../store/appContext";
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
-  const handleRemove = () => {
-    console.log("eliminar");
+  
+  const handleRemove = (e) => {
+    //store.favorites.filter(items => items.e !=e)
+
   };
   return (
     <nav className="container navbar navbar-light bg-light mb-3">
