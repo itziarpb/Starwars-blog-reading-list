@@ -1,3 +1,4 @@
+
 import React, { useState, useContext } from "react";
 import img400x200 from "../../img/400x200.png";
 import { Context } from "../store/appContext";
@@ -9,7 +10,6 @@ const Products = (props) => {
   const handleClick = () => {
     actions.addFavorite({ name: props.name, id: props.id });
   };
-
   return (
     <div className="col-12 col-md-4">
       <div className="card">

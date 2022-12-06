@@ -4,6 +4,10 @@ const getState = ({ getStore, getActions, setStore }) => {
 			favorites: []
 		},
 		actions: {
+			addLikes:(characters)=>{
+				const store = getStore()
+				setStore({likes: [...store.likes, characters]})
+			}, 
 			// Use getActions to call a function within a fuction
 			addFavorite: (character) => {
 				const store = getStore();
