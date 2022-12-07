@@ -3,18 +3,18 @@ import img800x600 from "../../img/800x600.png";
 import { Context } from "../store/appContext";
 import { Link, useParams } from "react-router-dom";
 
-const CharacterDetail = (props) => {
+const PlanetsDetail = (props) => {
     const params = useParams()
 
-    const [details, setDetails]= useState ("")
+    const [detailsPlanets, setDetailsPlanets]= useState ("")
 
 	useEffect(() => {
-		fetch(`https://www.swapi.tech/api/people/${params.theid}`)
+		fetch(`https://www.swapi.tech/api/planets/${params.id}`)
 		.then((response) => {
 		  console.log(response.ok);
 		  return response.json()
 		  .then((response) => {
-            setDetails(response.result);
+            setDetailsPlanets(response.result);
 		  });
 		});
 	  }, []);
@@ -26,17 +26,17 @@ const CharacterDetail = (props) => {
             <div className="row ">
             <img src={img800x600} className="col-md-6" alt="..." />
             <div className="col-12 col-md-6">
-                    { details ? 
+                    { detailsPlanets ? 
                     <div>
-                    <h2> {details.properties.name}</h2>
+                    <h2> {detailsPlanets.properties.name}</h2>
                     <div> <ul>
-                        <li>Description: {details.description }</li>
-                        <li>Gender: {details.properties.gender}</li>
-                        <li>Height: {details.properties.height}</li>
-                        <li>Hair Color: {details.properties.hair_color}</li>
-                        <li>Skin Color :{details.properties.skin_color}</li>
-                        <li>Eye Color: {details.properties.eye_color} </li>
-                        <li>Birth Year: {details.properties.birth_year}</li>
+                        <li>Description: {detailsPlanets.description }</li>
+                        <li>Rotation Period: {detailsPlanets.properties.rotation_period}</li>
+                        <li>Orbital Period: {detailsPlanets.properties.orbital_period}</li>
+                        <li>Gravity: {detailsPlanets.properties.gravity}</li>
+                        <li>Population :{detailsPlanets.properties.population}</li>
+                        <li>Climate: {detailsPlanets.properties.climate} </li>
+                        <li>Terrain: {detailsPlanets.properties.terrain}</li>
                     </ul>
                     </div>
                     </div>
@@ -54,4 +54,4 @@ const CharacterDetail = (props) => {
      
     );
 };
-export default CharacterDetail;
+export default PlanetsDetail;
