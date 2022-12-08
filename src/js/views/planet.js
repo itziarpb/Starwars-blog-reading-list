@@ -11,7 +11,7 @@ export const Planet = props => {
 
 
 	return (
-		<div className="jumbotron">
+		<div className="container jumbotron">
 			<h1>Planet: {params.id} </h1>
 		<PlanetsDetail/>
 		</div>

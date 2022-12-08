@@ -23,13 +23,15 @@ const PlanetsDetail = (props) => {
     return(
         <div className="Container">
         
-            <div className="row ">
-            <img src={img800x600} className="col-md-6" alt="..." />
-            <div className="col-12 col-md-6">
+            <div className="row text-center">
+            <img src={`https://starwars-visualguide.com/assets/img/planets/${params.id}.jpg`} alt="..." className="col-md-6" 
+          height="500" />
+            <div className="col-12 col-md-6 text-center">
                     { detailsPlanets ? 
                     <div>
-                    <h2> {detailsPlanets.properties.name}</h2>
-                    <div> <ul>
+                    <h1> {detailsPlanets.properties.name}</h1>
+                    <div>
+                       <ul>
                         <li>Description: {detailsPlanets.description }</li>
                         <li>Rotation Period: {detailsPlanets.properties.rotation_period}</li>
                         <li>Orbital Period: {detailsPlanets.properties.orbital_period}</li>

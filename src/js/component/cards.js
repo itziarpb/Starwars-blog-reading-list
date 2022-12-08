@@ -19,8 +19,9 @@ const Cards = () => {
   
   return (
  
-    <div className="scroll row">
+    <div className="scroll row ">
     <div className="d-flex">
+      
       {characters.map((character, index) => (
         <Products 
           name={character.name} id={character.uid} key={character.uid} />

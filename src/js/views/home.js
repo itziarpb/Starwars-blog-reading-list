@@ -10,9 +10,9 @@ import Planets from "../component/planets";
 export const Home = () => (
 	
 	<div className="container">
-		<h1 className="title mt-5">Characters</h1>
+		<h1 className="title mt-3 text-danger">Characters</h1>
 		<Cards />
-		<h1 className="title mt-5">Planets</h1>
+		<h1 className="title mt-3 text-danger">Planets</h1>
 		<CardsPlanets/>
 	</div>
 	

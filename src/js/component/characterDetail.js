@@ -24,11 +24,12 @@ const CharacterDetail = (props) => {
         <div className="Container">
         
             <div className="row ">
-            <img src={img800x600} className="col-md-6" alt="..." />
-            <div className="col-12 col-md-6">
+            <img src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`} className="col-md-6" alt="..." 
+          height="500"/>
+            <div className="col-12 col-md-6 text-center">
                     { details ? 
                     <div>
-                    <h2> {details.properties.name}</h2>
+                    <h1> {details.properties.name}</h1>
                     <div> <ul>
                         <li>Description: {details.description }</li>
                         <li>Gender: {details.properties.gender}</li>

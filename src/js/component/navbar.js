@@ -1,10 +1,13 @@
 
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams} from "react-router-dom";
 import { Context } from "../store/appContext";
+
 
 export const Navbar = () => {
   const { store, actions } = useContext(Context);
+  const params = useParams()
+
   
   const handleRemove = (e) => {
     //store.favorites.filter(items => items.e !=e)
@@ -12,6 +15,7 @@ export const Navbar = () => {
   };
   return (
     <nav className="container navbar navbar-light bg-light mb-3">
+ <div class="container-fluid">
       <Link to="/">
         <img
           src="https://1000logos.net/wp-content/uploads/2017/06/Star-Wars-Logo.jpg"
@@ -19,8 +23,10 @@ export const Navbar = () => {
           width="65"
           height="50"
         ></img>
+  
       </Link>
       <div className="ml-auto">
+        
         <div className="dropdown">
           <button
             className="btn btn-primary dropdown-toggle"
@@ -32,15 +38,23 @@ export const Navbar = () => {
           <ul className="dropdown-menu">
             {store.favorites.map((e, index) => (
               <li key={index} className="d-flex">
-                <Link to="/character/1">
-                  <div className="">{e.name}</div>
-                </Link>
+              <Link to={`/character/${e.id}`} >
+              <
+                div className="">{e.name}
+              </div>
+           </Link>
                 <i className="fa fa-solid fa-trash" onClick={handleRemove}></i>
-              </li>
+                
+              </li>  
+            
             ))}
+             
           </ul>
+          </div>
         </div>
       </div>
     </nav>
   );
 };
+
+
