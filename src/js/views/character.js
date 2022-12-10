@@ -11,7 +11,6 @@ export const Character = props => {
 
 	return (
 		<div className="container jumbotron ">
-			<h1>Character: {params.theid} </h1>
 		<CharacterDetail />
 		</div>
 	);

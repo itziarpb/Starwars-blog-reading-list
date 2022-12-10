@@ -4,20 +4,17 @@ import { Link, useParams } from "react-router-dom";
 import { Context } from "../store/appContext";
 import PlanetsDetail from "../component/planetsDetails";
 
+export const Planet = (props) => {
+  const { store, actions } = useContext(Context);
+  const params = useParams();
 
-export const Planet = props => {
-	const { store, actions } = useContext(Context);
-	const params = useParams();
-
-
-	return (
-		<div className="container jumbotron">
-			<h1>Planet: {params.id} </h1>
-		<PlanetsDetail/>
-		</div>
-	);
+  return (
+    <div className="container jumbotron">
+      <PlanetsDetail />
+    </div>
+  );
 };
 
 Planet.propTypes = {
-	match: PropTypes.object
+  match: PropTypes.object,
 };

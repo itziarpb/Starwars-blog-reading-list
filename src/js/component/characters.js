@@ -4,11 +4,24 @@ import img400x200 from "../../img/400x200.png";
 import { Context } from "../store/appContext";
 import { Link, useParams } from "react-router-dom";
 
-const Products = (props) => {
+const Characters = (props) => {
   const { store, actions } = useContext(Context);
 
   const handleClick = () => {
-    actions.addFavorite({ name: props.name, id: props.id });
+    let counter =0;
+    if (store.favorites.length>0) {
+      store.favorites.map((item, index)=>{
+        if (item.name==props.name) {
+          counter=counter+1;
+        }
+      })
+      if (counter==0){
+        actions.addFavorite({ name: props.name, id: props.id, type:"character" })
+      }
+    } else {        
+      actions.addFavorite({ name: props.name, id: props.id, type:"character" })
+    }
+    ;
   };
   return (
     <div className="col-12 col-md-4 me-4">
@@ -33,4 +46,4 @@ const Products = (props) => {
   );
 };
 
-export default Products;
+export default Characters;
