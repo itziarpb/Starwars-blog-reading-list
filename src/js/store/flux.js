@@ -1,22 +1,23 @@
 const getState = ({ getStore, getActions, setStore }) => {
-	return {
-		store: {
-			favorites: []
-		},
-		actions: {
-			addLikes:(characters)=>{
-				const store = getStore()
-				setStore({likes: [...store.likes, characters]})
-			}, 
-			// Use getActions to call a function within a fuction
-			addFavorite: (character) => {
-				const store = getStore();
-				setStore({favorites: [...store.favorites, character]})
-				
-			},
-		
-		}
-	};
+  return {
+    store: {
+      favorites: [],
+    },
+    actions: {
+      addFavorite: (character) => {
+        const store = getStore();
+        setStore({ favorites: [...store.favorites, character] });
+      },
+	  deleteFavorite: (remove)=> {
+		console.log(remove);
+		const store = getStore();
+		// setStore({
+		// 	//favorites : store.favorites.filter(items => items.e !=e)
+		// 	//setStore({favorites:newfavorites})
+		// })
+	  }
+    },
+  };
 };
 
 export default getState;

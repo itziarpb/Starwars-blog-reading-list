@@ -1,9 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
-import img800x600 from "../../img/800x600.png";
-import { Context } from "../store/appContext";
-import { Link, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import {useParams } from "react-router-dom";
 
-const CharacterDetail = (props) => {
+const CharacterDetail = () => {
     const params = useParams()
 
     const [details, setDetails]= useState ("")
@@ -22,37 +20,31 @@ const CharacterDetail = (props) => {
      
     return(
         <div className="Container">
-        
-            <div className="row ">
-            <img src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`} className="col-md-6" alt="..." 
-          height="500"/>
-            <div className="col-12 col-md-6 text-center">
-                    { details ? 
-                    <div>
-                    <h1> {details.properties.name}</h1>
-                    <div> <ul>
-                        <li>Description: {details.description }</li>
-                        <li>Gender: {details.properties.gender}</li>
-                        <li>Height: {details.properties.height}</li>
-                        <li>Hair Color: {details.properties.hair_color}</li>
-                        <li>Skin Color :{details.properties.skin_color}</li>
-                        <li>Eye Color: {details.properties.eye_color} </li>
-                        <li>Birth Year: {details.properties.birth_year}</li>
-                    </ul>
-                    </div>
-                    </div>
-                    
-                        :<h5>Cragando........</h5>
-
-                    } 
+        { details ?
+            <div>
+                <div className="row ">
+                    <img src={`https://starwars-visualguide.com/assets/img/characters/${params.theid}.jpg`} 
+                        className="col-12 col-md-5" alt="..." height="450"/>
+                    <div className="col-12 col-md-6 text-center">
+                        <h1 className="mt-5">{details.properties.name}</h1>
+                        <h4 className="mt-5">{details.description }</h4> 
+                    </div> 
+                </div>
+                <div className="mt-4"> 
+                    <hr className="line"/>                
+                <div className="row text-center text-danger">
+                    <div className="col-md-2">Gender<br/>{details.properties.gender}</div>
+                    <div className="col-md-2">Height<br/>{details.properties.height}</div>
+                    <div className="col-md-2">Hair Color<br/>{details.properties.hair_color}</div>
+                    <div className="col-md-2">Skin Color<br/>{details.properties.skin_color}</div>
+                    <div className="col-md-2">Eye Color<br/>{details.properties.eye_color} </div>
+                    <div className="col-md-2">Birth Year<br/>{details.properties.birth_year}</div>
+                </div>
+                </div >                    
             </div>
-    
-    
-
-    </div>    
-     </div>  
-        
-     
+        :<h5>Cargando........</h5>
+        } 
+        </div> 
     );
 };
 export default CharacterDetail;

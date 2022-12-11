@@ -1,6 +1,4 @@
-
-import React, { useState, useContext } from "react";
-import img400x200 from "../../img/400x200.png";
+import React, {useContext } from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams } from "react-router-dom";
 
@@ -8,37 +6,45 @@ const Characters = (props) => {
   const { store, actions } = useContext(Context);
 
   const handleClick = () => {
-    let counter =0;
-    if (store.favorites.length>0) {
-      store.favorites.map((item, index)=>{
-        if (item.name==props.name) {
-          counter=counter+1;
+    let counter = 0;
+    if (store.favorites.length > 0) {
+      store.favorites.map((item, index) => {
+        if (item.name == props.name) {
+          counter = counter + 1;
         }
-      })
-      if (counter==0){
-        actions.addFavorite({ name: props.name, id: props.id, type:"character" })
+      });
+      if (counter == 0) {
+        actions.addFavorite({name: props.name, id: props.id, type: "character"});
       }
-    } else {        
-      actions.addFavorite({ name: props.name, id: props.id, type:"character" })
+    } else {
+      actions.addFavorite({name: props.name, id: props.id, type: "character"});
     }
-    ;
   };
   return (
-    <div className="col-12 col-md-4 me-4">
+    <div className="col-12 col-sm-6 col-lg-4 me-4">
       <div className="card ">
-        <img src={`https://starwars-visualguide.com/assets/img/characters/${props.id}.jpg`} className="card-img-top" 
-          height="350"/>
+        <img
+          src={`https://starwars-visualguide.com/assets/img/characters/${props.id}.jpg`}
+          className="card-img-top"
+          height="300"
+        />
         <div className="card-body">
           <h5 className="card-title">{props.name}</h5>
           <div className="card-text">{props.gender}</div>
           <div className="card-text">{props.hairColor}</div>
           <div className="card-text">{props.eyeColor}</div>
-            <Link to={`/character/${props.id}`}className="btn btn-outline-primary ">
-              Learn More!
-            
+          <Link
+            to={`/character/${props.id}`}
+            className="btn btn-outline-primary "
+          >
+            Learn More!
           </Link>
-          <a href="#" onClick={handleClick} className="btn btn-outline-warning float-end ">
-          <i class="far fa-heart"></i>
+          <a
+            href="#"
+            onClick={handleClick}
+            className="btn btn-outline-warning float-end "
+          >
+            <i className="far fa-heart"></i>
           </a>
         </div>
       </div>
