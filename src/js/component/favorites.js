@@ -11,18 +11,24 @@ const Favorites = () => {
   };
 
   return (
-    <div>
+    
+    <div className="col-12 " >
       {store.favorites.map((item, index) => (
-        <li key={index} className="d-flex">
-          <Link to={`/${item.type}/${item.id}`}>
+      
+          <li key={index} className="d-flex" >
+         <div className="col-9"> <Link to={`/${item.type}/${item.id}`}>
             <div className="">{item.name}</div>
           </Link>
+          </div>
+          <div className="col-3">
           <i
-            className="fa fa-solid fa-trash"
-            onClick={() => handleRemove(item)}
-          ></i>
+           onClick={() => handleRemove(item)}
+           className="fas fa-trash float-center"
+          > 
+          </i>  
+           </div>
         </li>
-      ))}
+      ))}  
     </div>
   );
 };

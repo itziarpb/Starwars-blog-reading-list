@@ -23,10 +23,11 @@ export const Navbar = () => {
               className="btn btn-primary dropdown-toggle"
               type="button"
               data-bs-toggle="dropdown"
-            >
-              Favorites {store.favorites.length}
+              >  
+            Favorite  {store.favorites.length }
             </button>
-            <ul className="dropdown-menu">
+            <ul className="dropdown-menu ">
+               { (store.favorites.length ) == 0 ? " (Empty) " : " "  }
               <Favorites />
             </ul>
           </div>
@@ -35,3 +36,5 @@ export const Navbar = () => {
     </nav>
   );
 };
+
+

@@ -36,6 +36,7 @@ const Planets = (props) => {
           <Link to={`/planet/${props.id}`} className="btn btn-outline-primary">
             Learn More!
           </Link>
+          
           <a
             href="#"
             onClick={handleClick}
@@ -43,6 +44,7 @@ const Planets = (props) => {
           >
             <i className="far fa-heart"></i>
           </a>
+          
         </div>
       </div>
     </div>
@@ -51,4 +53,4 @@ const Planets = (props) => {
 
 export default Planets;
 
-////store.favorites.filter(items => items.name !=e)
+
