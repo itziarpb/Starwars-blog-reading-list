@@ -1,28 +1,28 @@
 import React, { useContext } from "react";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Favorites = () => {
   const { store, actions } = useContext(Context);
-  
-  const handleRemove = () => {
-    console.log(e.name)
-    actions.deleteFavorite();
-  }
+
+  const handleRemove = (itemDelete) => {
+    console.log(itemDelete);
+    actions.deleteFavorite(itemDelete);
+  };
 
   return (
     <div>
-        {store.favorites.map((e, index) => (
-                <li key={index} className="d-flex">
-                  <Link to={`/${e.type}/${e.id}`}>
-                    <div className="">{e.name}</div>
-                  </Link>
-                  <i
-                    className="fa fa-solid fa-trash"
-                    onClick={() =>handleRemove(e.name)}
-                  ></i>
-                </li>
-              ))}
+      {store.favorites.map((item, index) => (
+        <li key={index} className="d-flex">
+          <Link to={`/${item.type}/${item.id}`}>
+            <div className="">{item.name}</div>
+          </Link>
+          <i
+            className="fa fa-solid fa-trash"
+            onClick={() => handleRemove(item)}
+          ></i>
+        </li>
+      ))}
     </div>
   );
 };

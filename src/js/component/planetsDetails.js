@@ -1,9 +1,7 @@
-import React, { useState, useContext, useEffect } from "react";
-import img800x600 from "../../img/800x600.png";
-import { Context } from "../store/appContext";
-import { Link, useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 
-const PlanetsDetail = (props) => {
+const PlanetsDetail = () => {
   const params = useParams();
 
   const [detailsPlanets, setDetailsPlanets] = useState("");

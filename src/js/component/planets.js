@@ -1,6 +1,6 @@
-import React, {useContext } from "react";
+import React, { useContext } from "react";
 import { Context } from "../store/appContext";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Planets = (props) => {
   const { store, actions } = useContext(Context);
