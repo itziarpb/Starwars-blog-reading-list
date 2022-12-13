@@ -1,9 +1,10 @@
-import React, {useContext } from "react";
+import React, {useContext} from "react";
 import { Context } from "../store/appContext";
 import { Link, useParams } from "react-router-dom";
 
 const Characters = (props) => {
   const { store, actions } = useContext(Context);
+  
 
   const handleClick = () => {
     let counter = 0;
@@ -42,9 +43,11 @@ const Characters = (props) => {
           <a
             href="#"
             onClick={handleClick}
-            className="btn btn-outline-warning float-end "
+            className={store.favorites.filter(item=> item.name == props.name).length ==0 ? "btn btn-outline-warning" : "btn btn-warning"
+
+            }
           >
-            <i className="far fa-heart"></i>
+            <i className="far fa-heart"></i>   
           </a>
         </div>
       </div>

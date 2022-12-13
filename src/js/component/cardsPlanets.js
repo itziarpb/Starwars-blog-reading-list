@@ -3,7 +3,7 @@ import Planets from "./planets";
 
 const Cards = () => {
   const [planet, setPlanet] = useState([]);
-
+  
   useEffect(() => {
     fetch("//www.swapi.tech/api/planets/").then((response) => {
       console.log(response.ok);
@@ -17,7 +17,9 @@ const Cards = () => {
     <div className="scroll row">
       <div className="d-flex">
         {planet.map((planets, index) => (
-          <Planets name={planets.name} id={planets.uid} key={planets.uid} />
+          <Planets name={planets.name} id={planets.uid} key={planets.uid} 
+          
+          />
         ))}
       </div>
     </div>

@@ -40,7 +40,9 @@ const Planets = (props) => {
           <a
             href="#"
             onClick={handleClick}
-            className="btn btn-outline-warning float-end"
+            className={store.favorites.filter(item=> item.name == props.name).length ==0 ? "btn btn-outline-warning" : "btn btn-warning"
+
+            }
           >
             <i className="far fa-heart"></i>
           </a>
@@ -54,3 +56,4 @@ const Planets = (props) => {
 export default Planets;
 
 
+//className={ store.favorites.filter(item=> item.id == props.id ).length ==0 ? "btn btn-outline-warning" : "btn btn-warning"

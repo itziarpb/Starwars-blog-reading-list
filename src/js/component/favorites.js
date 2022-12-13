@@ -1,9 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 const Favorites = () => {
   const { store, actions } = useContext(Context);
+  const[color, setColor]=useState();
+  
 
   const handleRemove = (itemDelete) => {
     console.log(itemDelete);
@@ -16,7 +18,8 @@ const Favorites = () => {
       {store.favorites.map((item, index) => (
       
           <li key={index} className="d-flex" >
-         <div className="col-9"> <Link to={`/${item.type}/${item.id}`}>
+         <div className="col-9"> 
+         <Link to={`/${item.type}/${item.id}`}>
             <div className="">{item.name}</div>
           </Link>
           </div>
