@@ -28,7 +28,7 @@ const PlanetsDetail = () => {
               className="col-md-5"
               height="450"
             />
-            <div className="col-12 col-md-6 text-center">
+            <div className="col-12 col-sm-4 col-md-6 text-center">
               <h1 className="mt-5"> {detailsPlanets.properties.name}</h1>
               <h4 className="mt-5">{detailsPlanets.description}</h4>
             </div>
@@ -36,32 +36,32 @@ const PlanetsDetail = () => {
           <div className="mt-4">
             <hr className="line" />
             <div className="row text-center text-danger">
-              <div className="col-md-2">
+              <div className="col-md-2 col-sm-4">
                 Population
                 <br />
                 {detailsPlanets.properties.population}
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 col-sm-4">
                 Climate
                 <br />
                 {detailsPlanets.properties.climate}
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 col-sm-4">
                 Terrain
                 <br />
                 {detailsPlanets.properties.terrain}
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 col-sm-4">
                 Gravity
                 <br />
                 {detailsPlanets.properties.gravity}
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 col-sm-4">
                 Rotation Period
                 <br />
                 {detailsPlanets.properties.rotation_period}{" "}
               </div>
-              <div className="col-md-2">
+              <div className="col-md-2 col-sm-4">
                 Orbital Period
                 <br />
                 {detailsPlanets.properties.orbital_period}

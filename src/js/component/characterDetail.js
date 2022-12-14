@@ -33,12 +33,12 @@ const CharacterDetail = () => {
                 <div className="mt-4"> 
                     <hr className="line"/>                
                 <div className="row text-center text-danger">
-                    <div className="col-md-2">Gender<br/>{details.properties.gender}</div>
-                    <div className="col-md-2">Height<br/>{details.properties.height}</div>
-                    <div className="col-md-2">Hair Color<br/>{details.properties.hair_color}</div>
-                    <div className="col-md-2">Skin Color<br/>{details.properties.skin_color}</div>
-                    <div className="col-md-2">Eye Color<br/>{details.properties.eye_color} </div>
-                    <div className="col-md-2">Birth Year<br/>{details.properties.birth_year}</div>
+                    <div className="col-md-2 col-sm-4">Gender<br/>{details.properties.gender}</div>
+                    <div className="col-md-2 col-sm-4">Height<br/>{details.properties.height}</div>
+                    <div className="col-md-2 col-sm-4">Hair Color<br/>{details.properties.hair_color}</div>
+                    <div className="col-md-2 col-sm-4">Skin Color<br/>{details.properties.skin_color}</div>
+                    <div className="col-md-2 col-sm-4">Eye Color<br/>{details.properties.eye_color} </div>
+                    <div className="col-md-2 col-sm-4">Birth Year<br/>{details.properties.birth_year}</div>
                 </div>
                 </div >                    
             </div>

@@ -40,7 +40,7 @@ const Planets = (props) => {
           <a
             href="#"
             onClick={handleClick}
-            className={store.favorites.filter(item=> item.name == props.name).length ==0 ? "btn btn-outline-warning" : "btn btn-warning"
+            className={store.favorites.filter(item=> item.name == props.name).length ==0 ? "btn btn-outline-warning float-end" : "btn btn-warning float-end"
 
             }
           >
